@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sub_flutter_pemula/constant.dart';
 import 'package:sub_flutter_pemula/models/jobs_response.dart';
-import 'package:sub_flutter_pemula/pages/job_detail_page.dart';
+import 'package:sub_flutter_pemula/pages/resto_detail_page.dart';
 
 class HomePage extends StatefulWidget {
   final String displayName;
@@ -14,45 +14,40 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Jobs> recommendedJobs = [
-    Jobs(
-        jobPosition: 'Product Designer',
-        companyName: 'Google',
-        location: 'Stockholm, Sweden',
-        salaryRange: '\$90 - \$120K',
-        logoName: 'google.png',
-        savedJob: false),
-    Jobs(
-        jobPosition: 'UX Engineer',
-        companyName: 'UBER',
-        location: 'San Fransisco, USA',
-        salaryRange: '\$65 - \$80K',
-        logoName: 'uber.png',
-        savedJob: false),
-    Jobs(
-        jobPosition: 'UX Designer',
-        companyName: 'Microsoft',
-        location: 'Washington DC, USA',
-        salaryRange: '\$65 - \$90K',
-        logoName: 'microsoft.png',
-        savedJob: false)
+  List<Restaurant> recommendedJobs = [
+    Restaurant(
+        restoName: 'Restaurant Klodia',
+        location: 'Makassar',
+        price: '\$90 - \$120K',
+        restoGambar: 'resto1.jpeg',
+        savedResto: false),
+    Restaurant(
+        restoName: 'Payung Teduh',
+        location: 'Takalar',
+        price: '\$90 - \$120K',
+        restoGambar: 'resto2.jpeg',
+        savedResto: false),
+    Restaurant(
+        restoName: 'Kopi Resto',
+        location: 'Gowa',
+        price: '\$90 - \$120K',
+        restoGambar: 'resto3.jpeg',
+        savedResto: false),
   ];
 
-  List<Jobs> recentJobs = [
-    Jobs(
-        jobPosition: 'Senior UX Designer',
-        companyName: 'Apple Inc.',
-        location: 'California, United States',
-        salaryRange: '\$110 - \$130K',
-        logoName: 'apple.png',
-        savedJob: false),
-    Jobs(
-        jobPosition: 'Software Engineer - Web',
-        companyName: 'Reddit',
-        location: 'California, United States',
-        salaryRange: '\$60 - \$75K',
-        logoName: 'reddit.png',
-        savedJob: false)
+  List<Restaurant> recentJobs = [
+    Restaurant(
+        restoName: 'Vamous',
+        location: 'Makassar',
+        price: '\$90 - \$120K',
+        restoGambar: 'resto4.jpeg',
+        savedResto: false),
+    Restaurant(
+        restoName: 'Abiem',
+        location: 'Makassar',
+        price: '\$90 - \$120K',
+        restoGambar: 'resto5.jpeg',
+        savedResto: false),
   ];
 
   @override
@@ -65,12 +60,12 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         title: RichText(
             text: TextSpan(
-                text: 'Kaz',
+                text: 'Cari',
                 style: GoogleFonts.poppins(
                     color: kBlack, fontSize: 20.0, fontWeight: FontWeight.w800),
                 children: <TextSpan>[
               TextSpan(
-                  text: 'ki',
+                  text: 'Resto',
                   style: GoogleFonts.poppins(
                       color: kOrange, fontWeight: FontWeight.w800))
             ])),
@@ -99,9 +94,9 @@ class _HomePageState extends State<HomePage> {
                       style: GoogleFonts.lato(
                           color: kDarkGrey,
                           fontSize: 16.0,
-                          fontWeight: FontWeight.w500)),
+                          fontWeight: FontWeight.w700)),
                   SizedBox(height: 2.0),
-                  Text('Let\'s Find Your Job',
+                  Text('Let\'s Find Restaurant',
                       style: GoogleFonts.poppins(
                           color: kBlack,
                           fontSize: 26.0,
@@ -117,7 +112,7 @@ class _HomePageState extends State<HomePage> {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: kSafePadding),
                     child: Text(
-                      'Recommended Jobs',
+                      'Recommended Restauran',
                       style: GoogleFonts.poppins(
                           color: kBlack,
                           fontSize: 20.0,
@@ -136,12 +131,12 @@ class _HomePageState extends State<HomePage> {
                           onTap: () {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {
-                              return JobsDetail(
-                                jobPosition: recommendedJobs[index].jobPosition,
-                                companyName: recommendedJobs[index].companyName,
+                              return RestoDetail(
+                                jobPosition: recommendedJobs[index].restoName,
+                                companyName: recommendedJobs[index].location,
                                 location: recommendedJobs[index].location,
-                                salaryRange: recommendedJobs[index].salaryRange,
-                                logoName: recommendedJobs[index].logoName,
+                                salaryRange: recommendedJobs[index].price,
+                                logoName: recommendedJobs[index].restoGambar,
                               );
                             }));
                           },
@@ -162,32 +157,28 @@ class _HomePageState extends State<HomePage> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Image.asset(
-                                  'assets/${recommendedJobs[index].logoName}',
+                                  'assets/${recommendedJobs[index].restoGambar}',
                                   scale: 2.0,
+                                  fit: BoxFit.cover,
                                 ),
-                                SizedBox(height: kSafePadding),
+                                SizedBox(height: 2.0),
                                 Column(
                                   crossAxisAlignment:
                                       CrossAxisAlignment.stretch,
                                   children: [
-                                    Text(recommendedJobs[index].jobPosition,
+                                    Text(recommendedJobs[index].restoName,
                                         style: GoogleFonts.lato(
                                             color: kBlack,
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.w700)),
                                     SizedBox(height: 2.0),
-                                    Text(recommendedJobs[index].companyName,
+                                    Text(recommendedJobs[index].location,
                                         style: GoogleFonts.lato(
                                             color: kDarkGrey,
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.w700)),
                                     SizedBox(height: 4.0),
-                                    Text(recommendedJobs[index].location,
-                                        style: GoogleFonts.lato(
-                                          color: kDarkGrey,
-                                        )),
-                                    SizedBox(height: 4.0),
-                                    Text(recommendedJobs[index].salaryRange,
+                                    Text(recommendedJobs[index].price,
                                         style: GoogleFonts.lato(
                                             color: kDarkGrey,
                                             fontWeight: FontWeight.w600))
@@ -210,7 +201,7 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Recent Jobs',
+                    'Recent restauran',
                     style: GoogleFonts.poppins(
                         color: kBlack,
                         fontSize: 20.0,
@@ -226,12 +217,12 @@ class _HomePageState extends State<HomePage> {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                            return JobsDetail(
-                              jobPosition: recentJobs[index].jobPosition,
-                              companyName: recentJobs[index].companyName,
+                            return RestoDetail(
+                              jobPosition: recentJobs[index].restoName,
+                              companyName: recentJobs[index].location,
                               location: recentJobs[index].location,
-                              salaryRange: recentJobs[index].salaryRange,
-                              logoName: recentJobs[index].logoName,
+                              salaryRange: recentJobs[index].price,
+                              logoName: recentJobs[index].restoGambar,
                             );
                           }));
                         },
@@ -248,21 +239,22 @@ class _HomePageState extends State<HomePage> {
                                 child: Row(
                                   children: [
                                     Image.asset(
-                                      'assets/${recentJobs[index].logoName}',
+                                      'assets/${recentJobs[index].restoGambar}',
                                       scale: 2.0,
+                                      width: 100,
                                     ),
                                     SizedBox(width: kSafePadding),
                                     Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text(recentJobs[index].jobPosition,
+                                        Text(recentJobs[index].restoName,
                                             style: GoogleFonts.lato(
                                                 color: kBlack,
                                                 fontSize: 16.0,
                                                 fontWeight: FontWeight.w700)),
                                         SizedBox(height: 2.0),
-                                        Text(recentJobs[index].companyName,
+                                        Text(recentJobs[index].location,
                                             style: GoogleFonts.lato(
                                                 color: kDarkGrey,
                                                 fontSize: 16.0,
@@ -273,7 +265,7 @@ class _HomePageState extends State<HomePage> {
                                               color: kDarkGrey,
                                             )),
                                         SizedBox(height: 4.0),
-                                        Text(recentJobs[index].salaryRange,
+                                        Text(recentJobs[index].price,
                                             style: GoogleFonts.lato(
                                                 color: kDarkGrey,
                                                 fontWeight: FontWeight.w600))
@@ -283,14 +275,14 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               IconButton(
-                                  icon: recentJobs[index].savedJob == true
+                                  icon: recentJobs[index].savedResto == true
                                       ? Icon(Icons.bookmark, color: kOrange)
                                       : Icon(Icons.bookmark_border,
                                           color: kDarkGrey),
                                   onPressed: () {
                                     setState(() {
-                                      recentJobs[index].savedJob =
-                                          !recentJobs[index].savedJob;
+                                      recentJobs[index].savedResto =
+                                          !recentJobs[index].savedResto;
                                     });
                                   })
                             ],

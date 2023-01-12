@@ -27,13 +27,13 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Kaz',
+                    'Restau',
                     style: GoogleFonts.poppins(
                         color: kBlack,
                         fontSize: 48.0,
                         fontWeight: FontWeight.w800),
                   ),
-                  Text('ki',
+                  Text('rant',
                       style: GoogleFonts.poppins(
                           color: kOrange,
                           fontSize: 48.0,

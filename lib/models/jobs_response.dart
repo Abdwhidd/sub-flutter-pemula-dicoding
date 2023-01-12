@@ -1,16 +1,14 @@
-class Jobs {
-  String jobPosition;
-  String companyName;
+class Restaurant {
+  String restoName;
   String location;
-  String salaryRange;
-  String logoName;
-  bool savedJob;
+  String price;
+  String restoGambar;
+  bool savedResto;
 
-  Jobs(
-      {required this.jobPosition,
-      required this.companyName,
+  Restaurant(
+      {required this.restoName,
       required this.location,
-      required this.salaryRange,
-      required this.logoName,
-      required this.savedJob});
+      required this.price,
+      required this.restoGambar,
+      required this.savedResto});
 }
