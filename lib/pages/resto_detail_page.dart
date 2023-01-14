@@ -3,18 +3,17 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sub_flutter_pemula/constant.dart';
 
 class RestoDetail extends StatelessWidget {
-  final String? jobPosition;
-  final String? companyName;
+  final String? restoName;
   final String? location;
-  final String? salaryRange;
-  final String? logoName;
+  final String? price;
+  final String? restoGambar;
 
-  RestoDetail(
-      {this.jobPosition,
-      this.companyName,
-      this.location,
-      this.salaryRange,
-      this.logoName});
+  RestoDetail({
+    this.restoName,
+    this.location,
+    this.price,
+    this.restoGambar,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,7 @@ class RestoDetail extends StatelessWidget {
                   Navigator.pop(context);
                 }),
             centerTitle: true,
-            title: Text(companyName!,
+            title: Text(restoName!,
                 style: GoogleFonts.poppins(
                     color: kBlack,
                     fontSize: 16.0,
@@ -45,27 +44,25 @@ class RestoDetail extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'assets/$logoName',
+                        'assets/$restoGambar',
                         scale: 1.5,
+                        width: 100,
                       ),
                       SizedBox(width: kSafePadding),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(jobPosition!,
+                          Text(restoName!,
                               style: GoogleFonts.lato(
                                   color: kBlack,
                                   fontSize: 20.0,
                                   fontWeight: FontWeight.w700)),
-                          Text(companyName!,
+                          Text(location!,
                               style: GoogleFonts.lato(
                                   color: kDarkGrey,
                                   fontSize: 18.0,
                                   fontWeight: FontWeight.w700)),
-                          Text(location!,
-                              style: GoogleFonts.lato(
-                                  color: kDarkGrey, fontSize: 16.0)),
-                          Text(salaryRange!,
+                          Text(price!,
                               style: GoogleFonts.lato(
                                   color: kDarkGrey,
                                   fontSize: 16.0,
@@ -87,7 +84,7 @@ class RestoDetail extends StatelessWidget {
                               fontWeight: FontWeight.w700)),
                       SizedBox(height: kBasePadding),
                       Text(
-                        'I am looking for a strong and efficient UI/UX designer to add to my team. Candidate must pay strong attention to Material.io guidelines. Client must also be proficient with the following technologies: Adobe XD, Invision, Photoshop, Illustrator, Zeplin.',
+                        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                         textAlign: TextAlign.justify,
                         style: GoogleFonts.lato(color: kBlack, fontSize: 16.0),
                       )
@@ -99,116 +96,21 @@ class RestoDetail extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Text('Qualifications',
+                      Text('Facility',
                           style: GoogleFonts.poppins(
                               color: kBlack,
                               fontSize: 20.0,
                               fontWeight: FontWeight.w700)),
                       SizedBox(height: kBasePadding),
-                      Text('•\tMin level of education: B.Sc. in CSE',
+                      Text('•\tToilet',
                           style:
                               GoogleFonts.lato(color: kBlack, fontSize: 16.0)),
-                      Text('•\tExpert in Laravel framework',
-                          style:
-                              GoogleFonts.lato(color: kBlack, fontSize: 16.0)),
-                      Text('•\tFluent in English language',
+                      Text('•\tWifi',
                           style:
                               GoogleFonts.lato(color: kBlack, fontSize: 16.0)),
                     ],
                   ),
                 ),
-                SizedBox(height: 1.5 * kSafePadding),
-                Container(
-                  padding: EdgeInsets.all(2 * kSafePadding),
-                  decoration: BoxDecoration(
-                      color: kLightGrey,
-                      borderRadius: BorderRadius.circular(8.0)),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.people_outline,
-                            color: kOrange,
-                            size: 28.0,
-                          ),
-                          SizedBox(width: 1.5 * kSafePadding),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Vacancy',
-                                  style: GoogleFonts.lato(
-                                      color: kBlack,
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.w500)),
-                              SizedBox(height: kBasePadding),
-                              Text('03',
-                                  style: GoogleFonts.lato(
-                                      color: kBlack,
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.w700))
-                            ],
-                          )
-                        ],
-                      ),
-                      SizedBox(height: kSafePadding),
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.calendar_today,
-                            color: kOrange,
-                            size: 28.0,
-                          ),
-                          SizedBox(width: 1.5 * kSafePadding),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Application Deadline',
-                                  style: GoogleFonts.lato(
-                                      color: kBlack,
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.w500)),
-                              SizedBox(height: kBasePadding),
-                              Text('31 Aug 2020',
-                                  style: GoogleFonts.lato(
-                                      color: kBlack,
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.w700))
-                            ],
-                          )
-                        ],
-                      ),
-                      SizedBox(height: kSafePadding),
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.picture_in_picture_alt,
-                            color: kOrange,
-                            size: 28.0,
-                          ),
-                          SizedBox(width: 1.5 * kSafePadding),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Interview',
-                                  style: GoogleFonts.lato(
-                                      color: kBlack,
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.w500)),
-                              SizedBox(height: kBasePadding),
-                              Text('05 Sep 2020',
-                                  style: GoogleFonts.lato(
-                                      color: kBlack,
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.w700))
-                            ],
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                )
               ],
             ),
           ),

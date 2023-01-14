@@ -1,4 +1,4 @@
-#Mon Jan 09 15:30:45 WITA 2023
+#Sat Jan 14 13:33:50 WITA 2023
 base.0=/Users/wahid/Documents/GitHub/sub-flutter-pemula-dicoding/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

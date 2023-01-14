@@ -132,11 +132,10 @@ class _HomePageState extends State<HomePage> {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {
                               return RestoDetail(
-                                jobPosition: recommendedJobs[index].restoName,
-                                companyName: recommendedJobs[index].location,
+                                restoName: recommendedJobs[index].restoName,
                                 location: recommendedJobs[index].location,
-                                salaryRange: recommendedJobs[index].price,
-                                logoName: recommendedJobs[index].restoGambar,
+                                price: recommendedJobs[index].price,
+                                restoGambar: recommendedJobs[index].restoGambar,
                               );
                             }));
                           },
@@ -218,11 +217,10 @@ class _HomePageState extends State<HomePage> {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
                             return RestoDetail(
-                              jobPosition: recentJobs[index].restoName,
-                              companyName: recentJobs[index].location,
+                              restoName: recentJobs[index].restoName,
                               location: recentJobs[index].location,
-                              salaryRange: recentJobs[index].price,
-                              logoName: recentJobs[index].restoGambar,
+                              price: recentJobs[index].price,
+                              restoGambar: recentJobs[index].restoGambar,
                             );
                           }));
                         },
